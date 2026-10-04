@@ -2,12 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { useProgress } from '../hooks/useProgress';
+import { useTheme } from '../context/ThemeContext';
 import { developerTools } from '../data/developerToolsData';
 import DeveloperToolsMegaMenu from './DeveloperToolsMegaMenu';
 
 const Navbar = ({ onToggleSidebar }) => {
   const { user, isAuthenticated, logout } = useAuth();
   const { progress } = useProgress();
+  const { isDark, toggleTheme } = useTheme();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [devToolsOpen, setDevToolsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -104,6 +106,16 @@ const Navbar = ({ onToggleSidebar }) => {
             <span>🔥</span>
             <span className="streak-count">{progress?.streak || 7} Days</span>
           </div>
+
+          <button
+            type="button"
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={isDark ? 'Switch to Light Mode ☀️' : 'Switch to Dark Mode 🌙'}
+          >
+            <span className="theme-toggle-icon">{isDark ? '☀️' : '🌙'}</span>
+          </button>
 
           {isAuthenticated ? (
             <div

@@ -76,6 +76,163 @@
   --font-mono: 'Fira Code', 'Cascadia Code', monospace;
 }
 
+/* ============================================
+   DARK MODE THEME
+   Deep Navy + Blue/Cyan/Purple + Neon Glow
+   ============================================ */
+[data-theme="dark"] {
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #0f1629;
+  --bg-tertiary: #131b30;
+  --surface: #141c32;
+  --surface-hover: #1a2440;
+  --surface-active: #1e2a4a;
+  --border: rgba(99, 102, 241, 0.15);
+  --border-strong: rgba(99, 102, 241, 0.25);
+  --border-focus: #6366f1;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --text-light: #475569;
+
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --accent-secondary: #06b6d4;
+  --accent-light: rgba(99, 102, 241, 0.1);
+  --accent-border: rgba(99, 102, 241, 0.3);
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  --accent-gradient-subtle: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%);
+  --accent-glow: 0 4px 25px rgba(99, 102, 241, 0.25);
+
+  --success: #22c55e;
+  --success-bg: rgba(34, 197, 94, 0.1);
+  --success-border: rgba(34, 197, 94, 0.25);
+  --warning: #f59e0b;
+  --warning-bg: rgba(245, 158, 11, 0.1);
+  --warning-border: rgba(245, 158, 11, 0.25);
+  --danger: #ef4444;
+  --danger-bg: rgba(239, 68, 68, 0.1);
+  --danger-border: rgba(239, 68, 68, 0.25);
+  --info: #06b6d4;
+  --info-bg: rgba(6, 182, 212, 0.1);
+
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.06);
+  --card-shadow-hover: 0 12px 35px rgba(99, 102, 241, 0.15), 0 0 0 1px rgba(99, 102, 241, 0.15);
+  --glass-bg: rgba(15, 22, 41, 0.85);
+  --glass-border: 1px solid rgba(99, 102, 241, 0.12);
+  --glass-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(99, 102, 241, 0.05);
+}
+
+/* Dark mode overrides for specific elements */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background: #141c32;
+  border-color: rgba(99, 102, 241, 0.2);
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #0a0e1a;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.25);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.45);
+}
+
+[data-theme="dark"] .btn-secondary {
+  background: #141c32;
+  color: #e2e8f0;
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background: #1a2440;
+  border-color: #6366f1;
+  color: #a5b4fc;
+}
+
+[data-theme="dark"] .badge-beginner {
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+[data-theme="dark"] .badge-intermediate {
+  background: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+[data-theme="dark"] .badge-advanced {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+[data-theme="dark"] .badge-accent {
+  background: rgba(99, 102, 241, 0.1);
+  color: #a5b4fc;
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+[data-theme="dark"] .spinner {
+  border-color: rgba(99, 102, 241, 0.15);
+  border-top-color: #6366f1;
+}
+
+/* Dark mode toggle button */
+.theme-toggle-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle-icon {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn:hover .theme-toggle-icon {
+  transform: rotate(25deg);
+}
+
 /* Global Reset */
 *, *::before, *::after {
   box-sizing: border-box;

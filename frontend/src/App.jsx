@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ProgressProvider } from './context/ProgressContext';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
@@ -120,11 +121,13 @@ function AppLayout() {
 function App() {
   return (
     <Router>
-      <AuthProvider>
-        <ProgressProvider>
-          <AppLayout />
-        </ProgressProvider>
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <ProgressProvider>
+            <AppLayout />
+          </ProgressProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </Router>
   );
 }
