@@ -1,11 +1,19 @@
 import axios from 'axios';
 
+// Local dev uses Vite proxy (/api), production uses the deployed Render backend
+const isLocal = typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+const baseURL = isLocal
+  ? '/api'
+  : 'https://hub-872l.onrender.com/api';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000,
+  timeout: 15000,
 });
 
 // Interceptor to inject JWT Bearer Token into requests automatically
