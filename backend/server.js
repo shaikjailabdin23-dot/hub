@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const dotenv = require('dotenv');
 const { connectDB, disconnectDB } = require('./config/database');
 const seedData = require('./seed');
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // Dynamic CORS configuration allowing localhost Vite dev server
 const allowedOrigins = [
   process.env.CLIENT_URL || 'http://localhost:5173',
+  'https://jailuu.netlify.app',
   'http://localhost:3000',
   'http://localhost:5173',
   'http://localhost:5174',
@@ -41,26 +43,6 @@ app.use(
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
-
-// Root landing endpoint
-app.get('/', (req, res) => {
-  res.status(200).json({
-    status: 'online',
-    service: 'Hub Learning Website Backend API',
-    version: '1.0.0',
-    health: '/api/health',
-    endpoints: {
-      health: '/api/health',
-      auth: '/api/auth',
-      hubs: '/api/hubs',
-      topics: '/api/topics',
-      quizzes: '/api/quizzes',
-      projects: '/api/projects',
-      progress: '/api/progress',
-    },
-    message: 'Backend server is running properly and ready for requests.',
-  });
-});
 
 // API Root summary
 app.get('/api', (req, res) => {
@@ -93,13 +75,47 @@ app.use('/api/activity', require('./routes/activityRoutes'));
 app.use('/api/career', require('./routes/careerRoutes'));
 app.use('/api/ai', require('./routes/aiRoutes'));
 
-// 404 Handler for Unrecognized Endpoints
+// 404 Handler for Unrecognized API Endpoints
 app.use('/api/*', (req, res) => {
   res.status(404).json({
     success: false,
     message: `API Route ${req.originalUrl} not found.`,
   });
 });
+
+// ---------- Serve Frontend in Production ----------
+const frontendBuildPath = path.join(__dirname, '..', 'frontend', 'dist');
+const fs = require('fs');
+
+if (fs.existsSync(frontendBuildPath)) {
+  // Serve static assets (JS, CSS, images, etc.)
+  app.use(express.static(frontendBuildPath));
+
+  // For any non-API route, send the React app's index.html (client-side routing)
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendBuildPath, 'index.html'));
+  });
+} else {
+  // Development fallback: show API status JSON when no frontend build exists
+  app.get('/', (req, res) => {
+    res.status(200).json({
+      status: 'online',
+      service: 'Hub Learning Website Backend API',
+      version: '1.0.0',
+      health: '/api/health',
+      endpoints: {
+        health: '/api/health',
+        auth: '/api/auth',
+        hubs: '/api/hubs',
+        topics: '/api/topics',
+        quizzes: '/api/quizzes',
+        projects: '/api/projects',
+        progress: '/api/progress',
+      },
+      message: 'Backend server is running properly and ready for requests.',
+    });
+  });
+}
 
 // Global Error Handling Middleware
 app.use((err, req, res, next) => {

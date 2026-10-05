@@ -24,8 +24,9 @@ const Login = () => {
 
     setSubmitting(true);
     try {
-      await login(email, password);
-      navigate(from, { replace: true });
+      const data = await login(email, password);
+      const dest = data?.user?.role === 'admin' ? '/admin' : from;
+      navigate(dest, { replace: true });
     } catch (err) {
       setFormError(err.message || 'Login failed. Please verify your credentials.');
     } finally {
@@ -68,8 +69,9 @@ const Login = () => {
     setSubmitting(true);
     setFormError('');
     try {
-      await login('shaikjailabdin23@gmail.com', 'admin123');
-      navigate('/dashboard', { replace: true });
+      const data = await login('shaikjailabdin23@gmail.com', 'admin123');
+      const dest = data?.user?.role === 'admin' ? '/admin' : '/dashboard';
+      navigate(dest, { replace: true });
     } catch (err) {
       console.warn('Admin demo login fallback:', err.message);
       const adminUser = {
@@ -85,7 +87,7 @@ const Login = () => {
       localStorage.setItem('hub_auth_token', 'admin-demo-jwt-token-2026');
       localStorage.setItem('hub_user_profile', JSON.stringify(adminUser));
       if (setUser) setUser(adminUser);
-      navigate('/dashboard', { replace: true });
+      navigate('/admin', { replace: true });
     } finally {
       setSubmitting(false);
     }

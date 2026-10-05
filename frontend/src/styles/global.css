@@ -12,7 +12,7 @@
 
 :root {
   /* Core White & Slate Primary Palette */
-  --bg-primary: #f8fafc;
+  --bg-primary: #000000;
   --bg-secondary: #ffffff;
   --bg-tertiary: #f1f5f9;
   --surface: #ffffff;
@@ -81,7 +81,7 @@
    Deep Navy + Blue/Cyan/Purple + Neon Glow
    ============================================ */
 [data-theme="dark"] {
-  --bg-primary: #0a0e1a;
+  --bg-primary: #000000;
   --bg-secondary: #0f1629;
   --bg-tertiary: #131b30;
   --surface: #141c32;
