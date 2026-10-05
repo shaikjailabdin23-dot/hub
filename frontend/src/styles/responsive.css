@@ -1,0 +1,257 @@
+/* Responsive System & Fluid Spacing */
+
+/* Laptop & Medium Screens (<= 1200px) */
+@media (max-width: 1200px) {
+  .hub-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 1.25rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium Tablets (<= 1024px) */
+@media (max-width: 1024px) {
+  .topic-page-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .topic-sidebar-widget {
+    position: static;
+    top: auto;
+  }
+
+  .dual-section-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet & Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 64px;
+  }
+
+  .main-content-wrapper {
+    margin-left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  .main-content {
+    width: 100vw !important;
+    height: calc(100vh - 64px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  .page-container,
+  .home-page,
+  .technical-hub-page,
+  .skills-hub-page,
+  .coding-hub-page,
+  .career-hub-page,
+  .project-hub-page,
+  .dashboard,
+  .projects-page,
+  .progress-page,
+  .community-page,
+  .help-page,
+  .info-page,
+  .topic-reader-page,
+  .topic-page,
+  .quiz-page {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .hub-hero {
+    padding: 1.5rem 1.1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .hub-hero-header {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hub-hero-desc {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .hub-hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hub-stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .hub-stat-num {
+    font-size: 1.5rem;
+  }
+
+  .hub-stat-card {
+    padding: 0.85rem 1rem;
+  }
+
+  .filter-search-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .search-input-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .results-count-pill {
+    text-align: center;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .dashboard-hero {
+    padding: 1.5rem 1.1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .hubs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .continue-learning-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .continue-left {
+    flex-direction: column;
+  }
+
+  .topic-header-card {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .topic-section-card {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .topic-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .topic-sidebar-widget {
+    position: static;
+  }
+
+  .quiz-header-card {
+    padding: 1.25rem;
+  }
+
+  .quiz-title {
+    font-size: 1.3rem;
+  }
+
+  .question-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .question-text {
+    font-size: 1.1rem;
+  }
+
+  .progress-hero-banner {
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+  }
+}
+
+/* Small Handheld Mobile (<= 480px) */
+@media (max-width: 480px) {
+  h1 { font-size: 1.65rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.2rem; }
+
+  .hub-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .result-stats-row {
+    gap: 1rem;
+  }
+
+  .topic-header-card {
+    padding: 1.1rem 0.9rem;
+  }
+
+  .topic-section-card {
+    padding: 1.1rem 0.9rem;
+  }
+
+  .code-snippet-box {
+    font-size: 0.78rem;
+    padding: 0.75rem;
+  }
+
+  .topic-card {
+    padding: 1.1rem;
+  }
+
+  .topic-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .topic-card-footer .btn-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .project-card-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}

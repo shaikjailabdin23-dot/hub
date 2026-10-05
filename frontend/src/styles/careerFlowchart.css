@@ -1,0 +1,417 @@
+/* ========================================================================= */
+/* CAREER ROADMAP FLOWCHART STYLING (roadmap.sh inspired engineering canvas) */
+/* ========================================================================= */
+
+.flowchart-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.flowchart-header-bar {
+  background: linear-gradient(to right, #f8fafc, #ffffff);
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.flowchart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.legend-box-topic {
+  width: 22px;
+  height: 18px;
+  background-color: #fde047;
+  border: 2px solid #0f172a;
+  border-radius: 4px;
+}
+
+.legend-box-checkpoint {
+  width: 22px;
+  height: 18px;
+  background-color: #0f172a;
+  border: 2px solid #0f172a;
+  border-radius: 4px;
+}
+
+/* Canvas Area */
+.flowchart-canvas {
+  background-color: #f8fafc;
+  background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  min-height: 500px;
+  overflow-x: auto;
+}
+
+/* Target Audience Callout */
+.flowchart-audience-banner {
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  text-align: center;
+}
+
+.flowchart-audience-banner p {
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Main Spine / Pathway Grid */
+.flowchart-path-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Row Block */
+.flowchart-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Topic Track (Yellow Nodes) */
+.flowchart-topic-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.flowchart-connector-line {
+  height: 3px;
+  background-color: #2563eb;
+  min-width: 32px;
+  flex-grow: 1;
+  max-width: 60px;
+}
+
+/* Yellow Topic Pill (roadmap.sh style) */
+.flowchart-topic-pill {
+  background-color: #fde047;
+  color: #0f172a;
+  border: 2px solid #0f172a;
+  border-radius: 8px;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #0f172a;
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+  position: relative;
+  text-align: center;
+  min-width: 110px;
+  justify-content: center;
+}
+
+.flowchart-topic-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #0f172a;
+  background-color: #facc15;
+}
+
+.flowchart-topic-pill:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #0f172a;
+}
+
+.flowchart-topic-pill.is-completed {
+  background-color: #86efac;
+  border-color: #0f172a;
+}
+
+.flowchart-topic-pill.is-completed:hover {
+  background-color: #4ade80;
+}
+
+/* Checkpoint Grid & Connectors */
+.flowchart-checkpoints-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.flowchart-checkpoint-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.flowchart-vertical-dash {
+  width: 2px;
+  height: 24px;
+  border-left: 2.5px dashed #2563eb;
+  margin-bottom: 4px;
+}
+
+/* Dark Checkpoint Pill (roadmap.sh style) */
+.flowchart-checkpoint-pill {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: 2px solid #0f172a;
+  border-radius: 8px;
+  padding: 0.6rem 1.15rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(15, 23, 42, 0.3);
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+  text-align: center;
+}
+
+.flowchart-checkpoint-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.25);
+  background-color: #1e293b;
+}
+
+.flowchart-checkpoint-pill.is-completed {
+  background-color: #15803d;
+  border-color: #14532d;
+}
+
+/* Callout Note Bubble */
+.flowchart-callout-note {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-left: 4px solid #2563eb;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.25rem;
+  max-width: 650px;
+  margin: 0.75rem auto 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  text-align: left;
+}
+
+.flowchart-callout-note strong {
+  color: var(--text-primary);
+}
+
+/* Row Snake Connectors (Loops from one row to the next) */
+.flowchart-snake-connector {
+  position: absolute;
+  right: 15px;
+  bottom: -45px;
+  width: 40px;
+  height: 55px;
+  border-right: 3px solid #2563eb;
+  border-bottom: 3px solid #2563eb;
+  border-bottom-right-radius: 20px;
+  z-index: 1;
+}
+
+.flowchart-snake-connector-left {
+  position: absolute;
+  left: 15px;
+  bottom: -45px;
+  width: 40px;
+  height: 55px;
+  border-left: 3px solid #2563eb;
+  border-bottom: 3px solid #2563eb;
+  border-bottom-left-radius: 20px;
+  z-index: 1;
+}
+
+/* Side Floating Tools Bar (Social / AI Tutor) */
+.flowchart-side-tools {
+  position: absolute;
+  left: 1rem;
+  top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 5;
+}
+
+.flowchart-tool-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s;
+}
+
+.flowchart-tool-btn:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Floating AI Tutor Pill */
+.flowchart-ai-tutor-pill {
+  position: sticky;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s;
+}
+
+.flowchart-ai-tutor-pill:hover {
+  background: #1e293b;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.45);
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* Node Details Dialog / Modal */
+.flowchart-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.flowchart-modal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  max-width: 520px;
+  width: 100%;
+  padding: 1.75rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+  position: relative;
+  animation: fadeInModal 0.2s ease-out;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.flowchart-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.flowchart-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.flowchart-modal-close:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .flowchart-canvas {
+    padding: 1.5rem 1rem;
+  }
+  
+  .flowchart-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .flowchart-topic-pill {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+    min-width: 90px;
+  }
+
+  .flowchart-checkpoint-pill {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+  }
+  
+  .flowchart-side-tools {
+    display: none;
+  }
+}

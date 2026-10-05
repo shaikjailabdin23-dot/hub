@@ -1,0 +1,25 @@
+{
+  "name": "hub-learning-platform",
+  "version": "1.0.0",
+  "description": "Hub Learning Platform - Full-stack technical curriculum and student management website",
+  "scripts": {
+    "dev": "concurrently -n \"backend,frontend\" -c \"blue,green\" \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "npm --prefix frontend run dev",
+    "seed": "npm --prefix backend run seed"
+  },
+  "keywords": [
+    "hub-learning",
+    "education",
+    "curriculum",
+    "react",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}

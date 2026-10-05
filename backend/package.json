@@ -1,0 +1,23 @@
+{
+  "name": "hub-learning-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Hub Learning Website",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb-memory-server": "^9.4.0",
+    "mongoose": "^8.5.1",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^10.0.13"
+  }
+}

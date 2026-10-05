@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <defs>
+    <linearGradient id="hubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6c63ff"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="5" y="5" width="40" height="40" rx="10" fill="url(#hubGrad)"/>
+  <path d="M18 15h6v7h8v-7h6v20h-6v-7h-8v7h-6V15z" fill="#ffffff"/>
+  <text x="56" y="28" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="800" font-size="20" letter-spacing="1">HUB</text>
+  <text x="102" y="28" fill="#00d4ff" font-family="'Outfit', sans-serif" font-weight="600" font-size="18" letter-spacing="0.5">LEARNING</text>
+  <text x="57" y="40" fill="#a8b3c5" font-family="'Inter', sans-serif" font-weight="500" font-size="8.5" letter-spacing="2">EDUCATION PLATFORM</text>
+</svg>
