@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:5000',
+        target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false,
         configure: (proxy) => {
@@ -20,7 +20,7 @@ export default defineConfig({
                 JSON.stringify({
                   success: false,
                   message:
-                    'Backend server is offline or unreachable on http://127.0.0.1:5000. Please ensure the backend is started (`cd backend && npm run dev`).',
+                    'Backend server is offline or unreachable on http://localhost:5000. Please ensure the backend is started (`cd backend && npm run dev`).',
                 })
               );
             }

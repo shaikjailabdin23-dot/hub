@@ -5,7 +5,7 @@ const isLocal = typeof window !== 'undefined' &&
   (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
 const baseURL = isLocal
-  ? '/api'
+  ? 'http://localhost:5000/api'
   : 'https://hub-872l.onrender.com/api';
 
 const api = axios.create({

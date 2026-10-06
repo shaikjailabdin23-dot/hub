@@ -31,7 +31,9 @@ export const register = async (userData) => {
       localStorage.setItem('hub_user_profile', JSON.stringify(newUser));
       return { success: true, token: demoToken, user: newUser };
     }
-    throw error;
+    // Extract the actual error message from the backend if available
+    const errorMessage = error.response?.data?.message || error.message;
+    throw new Error(errorMessage);
   }
 };
 
