@@ -146,9 +146,20 @@ const register = async (req, res) => {
     });
   } catch (error) {
     console.error('[Register Error]:', error);
+    
+    // Check if it's a MongoDB Timeout or connection error
+    if (error.name === 'MongooseError' || error.message.includes('timed out')) {
+      return res.status(500).json({
+        success: false,
+        message: 'Database connection failed. Please check your MongoDB configuration.',
+        error: error.message
+      });
+    }
+
     return res.status(500).json({
       success: false,
       message: 'Server error during registration. Please try again later.',
+      error: error.message
     });
   }
 };
@@ -302,9 +313,19 @@ const login = async (req, res) => {
     });
   } catch (error) {
     console.error('[Login Error]:', error);
+    
+    if (error.name === 'MongooseError' || error.message.includes('timed out')) {
+      return res.status(500).json({
+        success: false,
+        message: 'Database connection failed. Please check your MongoDB configuration.',
+        error: error.message
+      });
+    }
+
     return res.status(500).json({
       success: false,
       message: 'Server error during login. Please try again later.',
+      error: error.message
     });
   }
 };
