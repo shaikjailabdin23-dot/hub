@@ -17,22 +17,28 @@ const connectDB = async () => {
   } catch (err) {
     console.warn(`[Database] Could not connect to primary MongoDB URI: ${err.message}`);
 
-    // Only use in-memory fallback in development (not in production/Render)
-    if (!isProduction) {
-      console.log('[Database] Initializing in-memory MongoDB for local zero-config operation...');
-      try {
-        const { MongoMemoryServer } = require('mongodb-memory-server');
-        mongodInstance = await MongoMemoryServer.create();
-        const inMemoryUri = mongodInstance.getUri();
-        await mongoose.connect(inMemoryUri);
-        console.log(`[Database] Connected to In-Memory MongoDB at: ${inMemoryUri}`);
+    console.log('[Database] Initializing in-memory MongoDB for local zero-config operation...');
+    try {
+      const { MongoMemoryServer } = require('mongodb-memory-server');
+      mongodInstance = await MongoMemoryServer.create();
+      const inMemoryUri = mongodInstance.getUri();
+      await mongoose.connect(inMemoryUri);
+      console.log(`[Database] Connected to In-Memory MongoDB at: ${inMemoryUri}`);
+      
+      if (isProduction) {
+        console.warn('====================================================');
+        console.warn('⚠️ WARNING: RUNNING IN-MEMORY DATABASE IN PRODUCTION');
+        console.warn('Your MONGODB_URI is invalid, so the server fell back to an in-memory database.');
+        console.warn('ALL DATA WILL BE LOST when the Render server restarts or goes to sleep!');
+        console.warn('Please update MONGODB_URI in Render with a valid Atlas cluster string.');
+        console.warn('====================================================');
+      } else {
         console.log('[Database] Note: To persist data across restarts, configure MONGODB_URI in backend/.env');
-      } catch (memErr) {
-        console.error('[Database] Failed to initialize in-memory MongoDB:', memErr.message);
-        console.error('[Database] Please ensure MongoDB is running locally or provide a valid MONGODB_URI in .env');
       }
-    } else {
-      console.error('[Database] CRITICAL: MongoDB connection failed in production. Ensure MONGODB_URI is correct and Atlas allows Render IP access (0.0.0.0/0).');
+    } catch (memErr) {
+      console.error('[Database] Failed to initialize in-memory MongoDB:', memErr.message);
+      console.error('[Database] Please ensure MongoDB is running locally or provide a valid MONGODB_URI in .env');
+      process.exit(1);
     }
   }
 };
