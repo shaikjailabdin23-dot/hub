@@ -31,8 +31,7 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: true,
-    credentials: true,
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   })
@@ -119,6 +118,8 @@ app.use((err, req, res, next) => {
   res.status(statusCode).json({
     success: false,
     message: err.message || 'An unexpected server error occurred.',
+    error: err,
+    stack: err.stack
   });
 });
 

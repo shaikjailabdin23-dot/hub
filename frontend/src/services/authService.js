@@ -33,6 +33,12 @@ export const register = async (userData) => {
     }
     // Extract the actual error message from the backend if available
     const errorMessage = error.response?.data?.message || error.message;
+    console.error('[AuthService] Registration Error Details:', {
+      message: errorMessage,
+      backendError: error.response?.data?.error,
+      backendStack: error.response?.data?.stack,
+      fullError: error
+    });
     throw new Error(errorMessage);
   }
 };

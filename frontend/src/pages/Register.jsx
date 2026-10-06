@@ -73,6 +73,7 @@ const Register = () => {
       await register(formData);
       navigate('/dashboard');
     } catch (err) {
+      console.error('[Register.jsx] Submission failed:', err);
       setFormError(err.message || 'Registration failed. Please try again.');
     } finally {
       setSubmitting(false);
