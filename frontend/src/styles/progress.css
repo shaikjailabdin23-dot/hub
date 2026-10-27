@@ -16,8 +16,8 @@
 
 /* Overall Progress Big Circular Hero Widget */
 .progress-hero-banner {
-  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
-  border: 1px solid var(--accent-border);
+  background: linear-gradient(135deg, rgba(10, 16, 35, 0.85) 0%, rgba(17, 30, 65, 0.7) 50%, rgba(30, 58, 138, 0.35) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: var(--radius-lg);
   padding: 2.25rem 2.5rem;
   display: flex;
@@ -25,7 +25,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 2rem;
-  box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.08);
+  box-shadow: 0 16px 40px -4px rgba(37, 99, 235, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .circular-gauge-container {
@@ -52,13 +54,13 @@
 .circular-progress-inner {
   width: 126px;
   height: 126px;
-  background: #ffffff;
+  background: rgba(10, 16, 32, 0.95);
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .circular-progress-val {
@@ -93,7 +95,9 @@
 }
 
 .hub-progress-card {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.35rem 1.5rem;
@@ -106,7 +110,7 @@
 
 .hub-progress-card:hover {
   transform: translateY(-2px);
-  border-color: var(--accent-border);
+  border-color: rgba(59, 130, 246, 0.45);
   box-shadow: var(--card-shadow-hover);
 }
 
@@ -126,7 +130,7 @@
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: 1.25rem;
-  color: var(--accent);
+  color: #60a5fa;
 }
 
 /* Student Learning & Resource Budget Section */
@@ -137,7 +141,9 @@
 }
 
 .budget-card {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.35rem 1.5rem;
@@ -150,7 +156,7 @@
 
 .budget-card:hover {
   transform: translateY(-2px);
-  border-color: var(--accent-border);
+  border-color: rgba(59, 130, 246, 0.45);
   box-shadow: var(--card-shadow-hover);
 }
 
@@ -179,27 +185,27 @@
 }
 
 .budget-badge-blue {
-  background: #eff6ff;
-  color: #1d4ed8;
-  border: 1px solid #bfdbfe;
+  background: rgba(37, 99, 235, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .budget-badge-green {
-  background: #f0fdf4;
-  color: #15803d;
-  border: 1px solid #bbf7d0;
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 .budget-badge-purple {
-  background: #faf5ff;
-  color: #7e22ce;
-  border: 1px solid #e9d5ff;
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .budget-badge-pink {
-  background: #fdf2f8;
-  color: #be185d;
-  border: 1px solid #fbcfe8;
+  background: rgba(236, 72, 153, 0.12);
+  color: #f472b6;
+  border: 1px solid rgba(236, 72, 153, 0.3);
 }
 
 .budget-metric-value {
@@ -219,7 +225,9 @@
 
 /* Timeline Activity History */
 .activity-card {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.75rem 2rem;
@@ -238,16 +246,16 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: #f8fafc;
+  background: rgba(15, 23, 42, 0.65);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   transition: all 0.2s ease;
 }
 
 .timeline-item:hover {
-  background: #ffffff;
-  border-color: var(--accent-border);
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+  background: rgba(18, 28, 56, 0.85);
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.15);
 }
 
 .timeline-dot {

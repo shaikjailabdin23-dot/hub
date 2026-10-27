@@ -34,6 +34,16 @@ function AppLayout() {
 
   return (
     <div className="app-container">
+      {/* Animated Black & Royal Blue Aurora Dynamic Background */}
+      <div className="aurora-ambient-container" aria-hidden="true">
+        <div className="aurora-beam aurora-beam-1" />
+        <div className="aurora-beam aurora-beam-2" />
+        <div className="aurora-beam aurora-beam-3" />
+        <div className="aurora-beam aurora-beam-4" />
+        <div className="aurora-cyber-grid" />
+        <div className="aurora-vignette" />
+      </div>
+
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       <div className="main-content-wrapper">

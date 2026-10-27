@@ -19,21 +19,33 @@ const Home = () => {
       {/* Hero Section */}
       <section
         style={{
-          background: 'linear-gradient(135deg, #ffffff 0%, #eff6ff 100%)',
+          background: 'linear-gradient(135deg, rgba(10, 16, 35, 0.85) 0%, rgba(17, 30, 65, 0.7) 50%, rgba(30, 58, 138, 0.35) 100%)',
           borderRadius: 'var(--radius-lg)',
-          border: '1px solid var(--accent-border)',
+          border: '1px solid rgba(59, 130, 246, 0.3)',
           padding: '4.5rem 2rem',
           textAlign: 'center',
           position: 'relative',
           overflow: 'hidden',
           marginBottom: '3rem',
-          boxShadow: '0 12px 32px -4px rgba(37, 99, 235, 0.08)',
+          boxShadow: '0 16px 40px -4px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
         }}
       >
         <div style={{ maxWidth: '850px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
           <div
             className="hero-badge animate-pulse-glow"
-            style={{ display: 'inline-flex', marginBottom: '1.25rem' }}
+            style={{
+              display: 'inline-flex',
+              marginBottom: '1.25rem',
+              background: 'rgba(37, 99, 235, 0.15)',
+              border: '1px solid rgba(59, 130, 246, 0.35)',
+              color: '#60a5fa',
+              borderRadius: 'var(--radius-full)',
+              padding: '0.4rem 1.1rem',
+              fontWeight: 700,
+              fontSize: '0.88rem',
+            }}
           >
             🚀 The Next-Gen Educational Platform for Engineers
           </div>
@@ -160,12 +172,14 @@ const Home = () => {
       {/* Why Choose Hub Learning Platform Section */}
       <section
         style={{
-          background: '#ffffff',
+          background: 'var(--surface)',
           border: '1px solid var(--border)',
           borderRadius: 'var(--radius-lg)',
           padding: '3.5rem 2.5rem',
           marginBottom: '4rem',
           boxShadow: 'var(--card-shadow)',
+          backdropFilter: 'blur(14px)',
+          WebkitBackdropFilter: 'blur(14px)',
         }}
       >
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
@@ -184,7 +198,7 @@ const Home = () => {
             gap: '2rem',
           }}
         >
-          <div style={{ padding: '1rem', background: '#f8fafc', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
+          <div style={{ padding: '1.25rem', background: 'rgba(15, 23, 42, 0.65)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(59, 130, 246, 0.2)' }}>
             <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>🧠</div>
             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>First-Principles Theory</h3>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
@@ -192,7 +206,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div style={{ padding: '1rem', background: '#f8fafc', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
+          <div style={{ padding: '1.25rem', background: 'rgba(15, 23, 42, 0.65)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(59, 130, 246, 0.2)' }}>
             <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>⚡</div>
             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Algorithms & DSA Drill</h3>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
@@ -200,7 +214,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div style={{ padding: '1rem', background: '#f8fafc', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
+          <div style={{ padding: '1.25rem', background: 'rgba(15, 23, 42, 0.65)', borderRadius: 'var(--radius-md)', border: '1px solid rgba(59, 130, 246, 0.2)' }}>
             <div style={{ fontSize: '2.2rem', marginBottom: '0.75rem' }}>💼</div>
             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>Career & Placement Suite</h3>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>

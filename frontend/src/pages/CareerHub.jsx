@@ -287,14 +287,14 @@ const CareerHub = () => {
       {/* Hero Banner with High-Contrast Crystal-Clear Styling */}
       <section
         style={{
-          background: 'linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%)',
-          border: '1px solid #bfdbfe',
+          background: 'linear-gradient(135deg, rgba(8, 18, 48, 0.92) 0%, rgba(12, 26, 68, 0.85) 50%, rgba(3, 7, 20, 0.95) 100%)',
+          border: '1px solid rgba(59, 130, 246, 0.35)',
           borderRadius: 'var(--radius)',
           padding: '2rem 2.25rem',
           marginBottom: '2rem',
           position: 'relative',
           overflow: 'hidden',
-          boxShadow: 'var(--card-shadow)',
+          boxShadow: '0 16px 40px -4px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1.5rem' }}>
@@ -304,13 +304,13 @@ const CareerHub = () => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.5rem',
-                background: '#dbeafe',
-                border: '1px solid #93c5fd',
+                background: 'rgba(37, 99, 235, 0.2)',
+                border: '1px solid rgba(59, 130, 246, 0.4)',
                 borderRadius: '999px',
                 padding: '0.25rem 0.85rem',
                 fontSize: '0.75rem',
                 fontWeight: 700,
-                color: '#1d4ed8',
+                color: '#60a5fa',
                 textTransform: 'uppercase',
                 marginBottom: '0.75rem',
                 letterSpacing: '0.5px',
@@ -318,10 +318,10 @@ const CareerHub = () => {
             >
               <span>🎯</span> Complete Career Roadmap & Skill System
             </div>
-            <h1 style={{ fontSize: '2.1rem', fontWeight: 800, margin: '0 0 0.5rem', color: '#0f172a' }}>
+            <h1 style={{ fontSize: '2.1rem', fontWeight: 800, margin: '0 0 0.5rem', color: 'var(--text-primary)' }}>
               Career Hub & Planning Platform
             </h1>
-            <p style={{ color: '#334155', fontSize: '0.96rem', lineHeight: '1.6', margin: 0, maxWidth: '680px' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: '1.6', margin: 0, maxWidth: '680px' }}>
               Plan your student engineering path, bridge real skill gaps, follow structured visual flowchart roadmaps, build recommended projects, and master interview preparation.
             </p>
           </div>
@@ -329,29 +329,29 @@ const CareerHub = () => {
           {/* Quick Career Selector Dropdown */}
           <div
             style={{
-              background: '#ffffff',
-              border: '1.5px solid #bfdbfe',
+              background: 'rgba(8, 18, 44, 0.85)',
+              border: '1.5px solid rgba(59, 130, 246, 0.35)',
               borderRadius: 'var(--radius-md)',
               padding: '1.15rem 1.35rem',
               display: 'flex',
               flexDirection: 'column',
               gap: '0.5rem',
               minWidth: '280px',
-              boxShadow: '0 4px 12px rgba(37, 99, 235, 0.08)',
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)',
             }}
           >
-            <label style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 700, color: '#475569', letterSpacing: '0.5px' }}>
+            <label style={{ fontSize: '0.75rem', textTransform: 'uppercase', fontWeight: 700, color: '#93c5fd', letterSpacing: '0.5px' }}>
               Current Career Target
             </label>
             <select
               value={selectedCareer}
               onChange={(e) => handleCareerChange(e.target.value)}
               style={{
-                background: '#f8fafc',
-                color: '#0f172a',
+                background: 'rgba(5, 12, 30, 0.95)',
+                color: '#f8fafc',
                 fontWeight: 700,
                 fontSize: '0.95rem',
-                border: '1.5px solid #2563eb',
+                border: '1.5px solid var(--accent)',
                 padding: '0.6rem 0.8rem',
                 borderRadius: 'var(--radius-sm)',
                 cursor: 'pointer',
@@ -359,12 +359,12 @@ const CareerHub = () => {
               }}
             >
               {careerPathsList.map((cName) => (
-                <option key={cName} value={cName} style={{ background: '#ffffff', color: '#0f172a' }}>
+                <option key={cName} value={cName} style={{ background: '#071026', color: '#f8fafc' }}>
                   {careerRoadmapsData[cName]?.icon} {cName}
                 </option>
               ))}
             </select>
-            <span style={{ fontSize: '0.75rem', color: '#2563eb', fontWeight: 600 }}>
+            <span style={{ fontSize: '0.75rem', color: '#60a5fa', fontWeight: 600 }}>
               ✓ 11 Complete Role Roadmaps Available
             </span>
           </div>
@@ -375,24 +375,24 @@ const CareerHub = () => {
           style={{
             marginTop: '1.75rem',
             paddingTop: '1.5rem',
-            borderTop: '1px solid #cbd5e1',
+            borderTop: '1px solid rgba(59, 130, 246, 0.2)',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             gap: '1rem',
           }}
         >
-          <div style={{ background: '#ffffff', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', boxShadow: 'var(--card-shadow)' }}>
+          <div style={{ background: 'rgba(8, 18, 44, 0.85)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(59, 130, 246, 0.25)', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)' }}>
             <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>Career Target</div>
             <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-primary)', marginTop: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
               <span>{currentCareerData.icon}</span>
               <span>{selectedCareer}</span>
             </div>
-            <div style={{ fontSize: '0.78rem', color: 'var(--accent)', marginTop: '0.25rem', fontWeight: 600 }}>
+            <div style={{ fontSize: '0.78rem', color: '#60a5fa', marginTop: '0.25rem', fontWeight: 600 }}>
               {currentCareerData.category}
             </div>
           </div>
 
-          <div style={{ background: '#ffffff', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', boxShadow: 'var(--card-shadow)' }}>
+          <div style={{ background: 'rgba(8, 18, 44, 0.85)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(59, 130, 246, 0.25)', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>Roadmap Progress</div>
               <span style={{ fontSize: '0.92rem', fontWeight: 800, color: 'var(--accent)' }}>{overallRoadmapProgress}%</span>
@@ -405,9 +405,9 @@ const CareerHub = () => {
             </div>
           </div>
 
-          <div style={{ background: '#ffffff', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', boxShadow: 'var(--card-shadow)' }}>
+          <div style={{ background: 'rgba(8, 18, 44, 0.85)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(59, 130, 246, 0.25)', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)' }}>
             <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>Recommended Next Skill</div>
-            <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#b45309', marginTop: '0.25rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fbbf24', marginTop: '0.25rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
               ⚡ {skillGapData.nextSkill}
             </div>
             <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>
@@ -415,9 +415,9 @@ const CareerHub = () => {
             </div>
           </div>
 
-          <div style={{ background: '#ffffff', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', boxShadow: 'var(--card-shadow)' }}>
+          <div style={{ background: 'rgba(8, 18, 44, 0.85)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(59, 130, 246, 0.25)', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)' }}>
             <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>Projects Completed</div>
-            <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#16a34a', marginTop: '0.25rem' }}>
+            <div style={{ fontSize: '1.25rem', fontWeight: 800, color: '#4ade80', marginTop: '0.25rem' }}>
               {projectsCompletedCount} / {currentCareerData.projects.length}
             </div>
             <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: '0.25rem' }}>
@@ -425,7 +425,7 @@ const CareerHub = () => {
             </div>
           </div>
 
-          <div style={{ background: '#ffffff', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', boxShadow: 'var(--card-shadow)' }}>
+          <div style={{ background: 'rgba(8, 18, 44, 0.85)', padding: '1.25rem', borderRadius: 'var(--radius-md)', border: '1px solid rgba(59, 130, 246, 0.25)', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>Interview Readiness</div>
               <span style={{ fontSize: '0.92rem', fontWeight: 800, color: 'var(--accent)' }}>{interviewReadinessPct}%</span>
@@ -443,8 +443,8 @@ const CareerHub = () => {
         <div
           style={{
             marginTop: '1.25rem',
-            background: '#fffbeb',
-            border: '1px solid #fde68a',
+            background: 'linear-gradient(90deg, rgba(14, 28, 68, 0.75) 0%, rgba(8, 16, 40, 0.85) 100%)',
+            border: '1px solid rgba(59, 130, 246, 0.3)',
             borderRadius: 'var(--radius-md)',
             padding: '1rem 1.25rem',
             display: 'flex',
@@ -457,10 +457,10 @@ const CareerHub = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <span style={{ fontSize: '1.3rem' }}>💡</span>
             <div>
-              <div style={{ color: '#92400e', fontWeight: 700, fontSize: '0.9rem' }}>
-                What Should I Learn Next? → <span style={{ textDecoration: 'underline' }}>{smartNextStep.action}</span>
+              <div style={{ color: '#93c5fd', fontWeight: 700, fontSize: '0.9rem' }}>
+                What Should I Learn Next? → <span style={{ textDecoration: 'underline', color: '#60a5fa' }}>{smartNextStep.action}</span>
               </div>
-              <div style={{ color: '#451a03', fontSize: '0.82rem', marginTop: '0.15rem' }}>
+              <div style={{ color: '#cbd5e1', fontSize: '0.82rem', marginTop: '0.15rem' }}>
                 {smartNextStep.reason}
               </div>
             </div>

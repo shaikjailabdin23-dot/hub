@@ -1,6 +1,8 @@
 /* Base Elevated Card */
 .glass-card {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--card-shadow);
@@ -11,7 +13,7 @@
 
 .glass-card:hover {
   transform: translateY(-3px);
-  border-color: var(--accent-border);
+  border-color: rgba(59, 130, 246, 0.45);
   box-shadow: var(--card-shadow-hover);
 }
 
@@ -20,7 +22,9 @@
   display: flex;
   flex-direction: column;
   padding: 1.75rem;
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--card-shadow);
@@ -31,7 +35,7 @@
 
 .hub-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  border-color: rgba(59, 130, 246, 0.55);
   box-shadow: var(--card-shadow-hover);
 }
 
@@ -52,16 +56,16 @@
   font-size: 1.6rem;
   color: #ffffff;
   background: var(--accent-gradient);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
 }
 
 .hub-card-badge {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-light);
-  border: 1px solid var(--accent-border);
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   padding: 0.3rem 0.65rem;
   border-radius: var(--radius-full);
 }
@@ -93,7 +97,7 @@
 .hub-card-progress-bar {
   width: 100%;
   height: 6px;
-  background: #f1f5f9;
+  background: rgba(59, 130, 246, 0.15);
   border-radius: var(--radius-full);
   overflow: hidden;
   margin-bottom: 1.25rem;
@@ -114,9 +118,9 @@
   gap: 0.5rem;
   padding: 0.7rem;
   border-radius: var(--radius-md);
-  background: var(--bg-primary);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.2s ease;
@@ -124,16 +128,18 @@
 
 .hub-card:hover .hub-card-btn {
   background: var(--accent);
-  border-color: var(--accent);
+  border-color: var(--accent-hover);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
 }
 
 /* 2. Topic Card */
 .topic-card {
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.4rem;
@@ -148,7 +154,7 @@
 
 .topic-card:hover {
   transform: translateY(-3px);
-  border-color: var(--accent-border);
+  border-color: rgba(59, 130, 246, 0.45);
   box-shadow: var(--card-shadow-hover);
 }
 
@@ -185,7 +191,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 1rem;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid var(--border);
   font-size: 0.82rem;
   color: var(--text-muted);
   gap: 0.75rem;
@@ -203,7 +209,9 @@
 
 /* 3. Quiz Card */
 .quiz-card {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
@@ -215,7 +223,7 @@
 
 .quiz-card:hover {
   transform: translateY(-3px);
-  border-color: var(--accent);
+  border-color: rgba(59, 130, 246, 0.45);
   box-shadow: var(--card-shadow-hover);
 }
 
@@ -235,7 +243,9 @@
 
 /* 4. Project Card */
 .project-card {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.75rem;
@@ -248,7 +258,7 @@
 
 .project-card:hover {
   transform: translateY(-3px);
-  border-color: var(--accent-border);
+  border-color: rgba(59, 130, 246, 0.45);
   box-shadow: var(--card-shadow-hover);
 }
 
@@ -267,7 +277,7 @@
 
 .project-problem-snippet {
   font-size: 0.88rem;
-  color: var(--accent);
+  color: #60a5fa;
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
@@ -288,9 +298,9 @@
 }
 
 .tech-tag {
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  color: #1d4ed8;
+  background: rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
   font-size: 0.75rem;
   padding: 0.25rem 0.6rem;
   border-radius: var(--radius-sm);
@@ -317,8 +327,8 @@
   font-size: 0.85rem;
   color: var(--text-primary);
   padding: 0.4rem 0.85rem;
-  background: #ffffff;
-  border: 1px solid var(--border-strong);
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   font-weight: 600;
   transition: all 0.2s ease;

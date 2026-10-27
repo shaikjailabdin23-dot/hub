@@ -12,8 +12,8 @@
 }
 
 .flowchart-header-bar {
-  background: linear-gradient(to right, #f8fafc, #ffffff);
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(8, 18, 48, 0.95) 0%, rgba(4, 10, 30, 0.95) 100%);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.25);
   padding: 1.25rem 1.75rem;
   display: flex;
   justify-content: space-between;
@@ -60,8 +60,8 @@
 
 /* Canvas Area */
 .flowchart-canvas {
-  background-color: #f8fafc;
-  background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+  background-color: #030818;
+  background-image: radial-gradient(rgba(59, 130, 246, 0.22) 1.2px, transparent 1.2px);
   background-size: 24px 24px;
   padding: 2.5rem 2rem;
   position: relative;
@@ -73,11 +73,11 @@
 .flowchart-audience-banner {
   max-width: 580px;
   margin: 0 auto 2.5rem;
-  background: #ffffff;
-  border: 1px solid var(--border);
+  background: rgba(8, 18, 44, 0.88);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: var(--radius-md);
   padding: 1rem 1.5rem;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
@@ -224,14 +224,14 @@
 
 /* Callout Note Bubble */
 .flowchart-callout-note {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
+  background: rgba(8, 18, 44, 0.88);
+  border: 1.5px solid rgba(59, 130, 246, 0.28);
   border-left: 4px solid #2563eb;
   border-radius: var(--radius-sm);
   padding: 0.85rem 1.25rem;
   max-width: 650px;
   margin: 0.75rem auto 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.5;
@@ -282,8 +282,8 @@
   width: 38px;
   height: 38px;
   border-radius: 8px;
-  background: #ffffff;
-  border: 1px solid var(--border);
+  background: rgba(8, 18, 44, 0.85);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   color: var(--text-secondary);
   display: flex;
   align-items: center;
@@ -291,13 +291,13 @@
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.2s;
 }
 
 .flowchart-tool-btn:hover {
-  background: var(--accent-light);
-  color: var(--accent);
+  background: rgba(37, 99, 235, 0.22);
+  color: #60a5fa;
   border-color: var(--accent);
   transform: translateY(-2px);
 }
@@ -347,13 +347,13 @@
 }
 
 .flowchart-modal-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: linear-gradient(165deg, rgba(8, 18, 48, 0.98) 0%, rgba(3, 8, 22, 0.99) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
   border-radius: var(--radius-md);
   max-width: 520px;
   width: 100%;
   padding: 1.75rem;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
   position: relative;
   animation: fadeInModal 0.2s ease-out;
 }

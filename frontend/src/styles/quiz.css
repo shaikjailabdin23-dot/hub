@@ -7,7 +7,9 @@
 }
 
 .quiz-header-card {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem;
@@ -29,7 +31,7 @@
 .quiz-progress-track {
   width: 100%;
   height: 8px;
-  background: #f1f5f9;
+  background: rgba(59, 130, 246, 0.15);
   border-radius: var(--radius-full);
   overflow: hidden;
   margin-top: 1rem;
@@ -43,7 +45,9 @@
 
 /* Question Card */
 .question-card {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2.25rem;
@@ -55,7 +59,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--accent);
+  color: #60a5fa;
   margin-bottom: 0.75rem;
 }
 
@@ -80,43 +84,44 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  background: #ffffff;
+  background: rgba(15, 23, 42, 0.7);
   border: 1.5px solid var(--border-strong);
   border-radius: var(--radius-md);
   color: var(--text-primary);
   text-align: left;
   font-size: 0.98rem;
   font-weight: 500;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
   width: 100%;
+  backdrop-filter: blur(10px);
 }
 
 .option-btn:hover:not(:disabled) {
-  background: var(--surface-hover);
+  background: rgba(37, 99, 235, 0.18);
   border-color: var(--accent);
   transform: translateX(3px);
 }
 
 .option-btn.selected {
-  background: #eff6ff;
-  border-color: var(--accent);
-  color: #1d4ed8;
+  background: rgba(37, 99, 235, 0.25);
+  border-color: #3b82f6;
+  color: #93c5fd;
   font-weight: 600;
-  box-shadow: 0 0 0 1px var(--accent);
+  box-shadow: 0 0 0 1px #3b82f6;
 }
 
 .option-btn.correct {
-  background: #f0fdf4;
-  border-color: #16a34a;
-  color: #15803d;
+  background: rgba(34, 197, 94, 0.15);
+  border-color: #22c55e;
+  color: #4ade80;
   font-weight: 600;
 }
 
 .option-btn.wrong {
-  background: #fef2f2;
-  border-color: #dc2626;
-  color: #b91c1c;
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+  color: #f87171;
   font-weight: 600;
 }
 
@@ -131,7 +136,7 @@
   font-weight: 700;
   font-size: 0.85rem;
   flex-shrink: 0;
-  background: #f8fafc;
+  background: rgba(15, 23, 42, 0.85);
   color: var(--text-secondary);
 }
 
@@ -162,7 +167,9 @@
 
 /* Quiz Results Card */
 .quiz-result-card {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 3rem 2rem;
@@ -185,9 +192,9 @@
   font-size: 2.8rem;
   font-family: var(--font-heading);
   font-weight: 800;
-  color: var(--accent);
-  background: #eff6ff;
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.18);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
 }
 
 .result-badge {
@@ -198,15 +205,15 @@
 }
 
 .result-badge.pass {
-  background: #f0fdf4;
-  color: #15803d;
-  border: 1px solid #bbf7d0;
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 .result-badge.fail {
-  background: #fef2f2;
-  color: #b91c1c;
-  border: 1px solid #fecaca;
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 .result-stats-row {
@@ -231,7 +238,9 @@
 }
 
 .review-item {
-  background: #ffffff;
+  background: var(--surface);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
@@ -239,11 +248,11 @@
 }
 
 .explanation-box {
-  background: #f0f9ff;
+  background: rgba(14, 165, 233, 0.12);
   border-left: 4px solid var(--accent-secondary);
   padding: 0.85rem 1.25rem;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   margin-top: 1rem;
   font-size: 0.92rem;
-  color: #0369a1;
+  color: #7dd3fc;
 }
